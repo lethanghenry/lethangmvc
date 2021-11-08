@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Basic_level2_agan.Models.Blog>
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="header row col-md-12" style="padding: 0px; margin: 0px; width: 100%;background:black;height:50px;">
+            @Html.Partial("Header")
+        </div>
+        <div class="main row col-md-12" style="padding:0px;margin-right:10px;">
+            <div class="menu col-md-2">
+                @Html.Partial("Menu")
+            </div>
+            <div class="content col-md-10" style="margin:0px;background:#696969;">
+                <div class="card" style="background:white;margin:25px;">
+
+                    <div class="card-header" style="background:#CCCCCC">
+                        <h2>Search Blog</h2>
+                    </div>                  
+                        <div class="card-body">
+                            <div class="row">
+
+
+                                <div class="col-md-12">
+                                    @using (Html.BeginForm())
+                            {
+                                        <p>
+                                            Title:@Html.TextBox("searchString")<br />
+                                            <div style="margin-left:20%;">
+
+                                                <input type="submit" value="Search" style="color:green;" />
+                                            </div>
+
+                                        </p>
+
+                            }
+                                </div>
+
+
+                            </div>
+                        </div>                 
+                </div>
+                <div>
+                    @Html.Partial("ListBlogs")
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-12" style="padding:0px;">
+            @Html.Partial("Footer")
+        </div>
+    </div>
+
+</body>
+</html>
